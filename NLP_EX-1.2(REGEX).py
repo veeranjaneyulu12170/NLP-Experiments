@@ -1,4 +1,4 @@
-## REG_X(printing digits from words)
+## REGX(printing digits from words)
 nlp = spacy.load('en_core_web_sm')
 
 sentence = "There are 3 apples and 5 oranges on the table."
