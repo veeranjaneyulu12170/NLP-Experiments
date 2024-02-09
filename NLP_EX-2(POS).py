@@ -1,20 +1,5 @@
-nlp = spacy.load('en_core_web_sm')
-sentence = "I like coffee, but I don't like tea."
+doc="There were two kind of people"
+pos=nlp(doc)
 
-doc = nlp(sentence)
-
-split_sentences = []
-current_sentence = []
-
-for token in doc:
-    if token.text.lower() in ['and', 'but', 'or', 'nor', 'for', 'so', 'yet']:
-        split_sentences.append(' '.join(current_sentence))
-        current_sentence = []
-    else:
-        current_sentence.append(token.text)
-
-split_sentences.append(' '.join(current_sentence))
-
-
-for i, sentence in enumerate(split_sentences):
-    print(f"Sentence {i + 1}: {sentence}")
+for post in  pos:
+  print(f" {post.text} ==> {post.pos_}")
